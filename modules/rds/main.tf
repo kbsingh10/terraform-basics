@@ -7,8 +7,8 @@ resource "aws_security_group" "rds_sg" {
   # Strict firewall rule: Only allow connections on 5432 from the Public VM's Security Group
   ingress {
     description = "Mysql from Public Web Server"
-    from_port   = 5432
-    to_port     = 5432
+    from_port   = 3306
+    to_port     = 3306
     protocol    = "tcp"
     cidr_blocks = [data.aws_vpc.selected.cidr_block]
   }
